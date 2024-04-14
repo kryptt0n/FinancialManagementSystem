@@ -1,4 +1,4 @@
-﻿namespace EventManagementSystem
+﻿namespace FinancialManagementSystem
 {
     partial class SignUpPage
     {

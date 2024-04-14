@@ -1,4 +1,4 @@
-using EventManagementSystem;
+using FinancialManagementSystem;
 
 namespace FinancialManagementSystem
 {

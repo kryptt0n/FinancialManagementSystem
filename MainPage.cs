@@ -1,5 +1,6 @@
 using MySqlConnector;
-using System.Transactions;
+using Org.BouncyCastle.Math.Field;
+using System.Transactions; 
 
 namespace FinancialManagementSystem
 {
@@ -17,14 +18,22 @@ namespace FinancialManagementSystem
             try
             {
                 user = CurrentUser.User;
-                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC FETCH FIRST ROW ONLY ";
+                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC LIMIT 1 ";
                 MySqlCommand command = new MySqlCommand(balance, connection);
                 MySqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    BalanceValueLb.Text = reader.GetDouble(0).ToString("0.##");
+                if (reader.HasRows) { 
+                    while (reader.Read())
+                    {
+                        BalanceValueLb.Text = reader.GetDouble(0).ToString("0.##");
+                    }
+                    
+
                 }
-                UserNameLb.Text = user.Name;
+                else
+                {
+                    BalanceValueLb.Text = "0";
+                }
+                UserNameLb.Text = user.Username;
             } catch {
                 MessageBox.Show("Error Occured When Loading","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

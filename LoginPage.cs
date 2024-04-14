@@ -8,12 +8,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FinancialManagementSystem;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
 
 
-namespace EventManagementSystem
+namespace FinancialManagementSystem
 {
     public partial class LoginPage : Form
     {
@@ -41,7 +40,7 @@ namespace EventManagementSystem
                 
                 CurrentUser.User.Username = username;
                 CurrentUser.User.Password = password;
-                Form1 form = new Form1();
+                MainPage form = new MainPage();
                 form.Show();
             }
             else

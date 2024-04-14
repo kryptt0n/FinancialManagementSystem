@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace EventManagementSystem
+namespace FinancialManagementSystem
 {
     public partial class SignUpPage : Form
     {
