@@ -1,8 +1,10 @@
+using EventManagementSystem;
+
 namespace FinancialManagementSystem
 {
     internal static class Program
     {
-        public static Database database = Database.GetInstance("3.87.197.200", "3306", "un", "pw", "bank_app");
+        public static Database database = Database.GetInstance("3.87.197.200", "3306", "vitaly", "vitalysukhinin", "bank_app");
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -12,7 +14,7 @@ namespace FinancialManagementSystem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainPage());
+            Application.Run(new LoginPage());
         }
     }
 }
