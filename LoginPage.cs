@@ -42,6 +42,7 @@ namespace FinancialManagementSystem
                 CurrentUser.User.Password = password;
                 MainPage form = new MainPage();
                 form.Show();
+                Hide();
             }
             else
             {
@@ -57,7 +58,7 @@ namespace FinancialManagementSystem
                 string password = txtPassword.Text;
                 string hashedPass = PasswordHasher.ComputeSha256Hash(password);
                 string sql = $"""
-                    SELECT EMAIL
+                    SELECT USERID, EMAIL
                     FROM USERS
                     WHERE UNAME = '{username}'
                     AND PWHASH = '{hashedPass}';
@@ -68,7 +69,8 @@ namespace FinancialManagementSystem
                 {
                     while (reader.Read())
                     {
-                       CurrentUser.User.Email = reader.GetString(0);
+                        CurrentUser.User.Id = reader.GetInt32(0);
+                        CurrentUser.User.Email = reader.GetString(1);
                     }
                     return reader.HasRows;
                 }

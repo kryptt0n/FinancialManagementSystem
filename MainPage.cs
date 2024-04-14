@@ -15,29 +15,85 @@ namespace FinancialManagementSystem
 
         private void MainPage_Load(object sender, EventArgs e)
         {
+            user = CurrentUser.User;
+            UserNameLb.Text = user.Username;
+            LoadBalance();
+            LoadIncome();
+            LoadExpenses();
+        }
+
+        private void LoadBalance()
+        {
             try
             {
-                user = CurrentUser.User;
                 string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC LIMIT 1 ";
                 MySqlCommand command = new MySqlCommand(balance, connection);
-                MySqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows) { 
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            BalanceValueLb.Text = reader.GetDouble(0).ToString("0.##");
+                        }
+                    }
+                    else
+                    {
+                        BalanceValueLb.Text = "0";
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error Occured When Loading", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadIncome()
+        {
+            try
+            {
+                string income = $"SELECT COALESCE(SUM(AMOUNT), 0) FROM TRANSACTIONS WHERE UID = {user.Id} AND TYPE = 'IN'";
+                MySqlCommand command = new MySqlCommand(income, connection);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
                     while (reader.Read())
                     {
-                        BalanceValueLb.Text = reader.GetDouble(0).ToString("0.##");
-                    }
-                    
-
+                        IncomeLb.Text = reader.GetDouble(0).ToString("0.##");
+                    }   
                 }
-                else
-                {
-                    BalanceValueLb.Text = "0";
-                }
-                UserNameLb.Text = user.Username;
-            } catch {
-                MessageBox.Show("Error Occured When Loading","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured When Loading", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void LoadExpenses()
+        {
+            try
+            {
+                string expense = $"SELECT COALESCE(SUM(AMOUNT), 0) FROM TRANSACTIONS WHERE UID = {user.Id} AND TYPE = 'EX'";
+                MySqlCommand command = new MySqlCommand(expense, connection);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            ExpensesLb.Text = reader.GetDouble(0).ToString("0.##");
+                        }
+                    }
+                    else
+                    {
+                        ExpensesLb.Text = "0";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured When Loading", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -57,6 +113,13 @@ namespace FinancialManagementSystem
             UserReport userReport = new UserReport();
             userReport.Show();
             this.Hide();
+        }
+
+        private void AddTransactionBtn_Click(object sender, EventArgs e)
+        {
+            TransactionDetail transactionDetail = new TransactionDetail();
+            transactionDetail.Show();
+            Hide();
         }
     }
 }
