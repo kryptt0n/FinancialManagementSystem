@@ -31,16 +31,8 @@ namespace FinancialManagementSystem
                 string typeString = TypeCb.Text;
                 string type = typeString.Equals("Income") ? "IN" : "EX";
                 string group = GroupTb.Text;
-                string hashcode = string.Concat(amount, date, type, group);
                 string balance = GetBalance(date).ToString("0.##");
-
-                string qStr = "INSERT INTO TRANSACTIONS(UID, HASHCODE, TRAN_DATE, TYPE, AMOUNT, TRAN_GROUP, BALANCE) VALUES " +
-                    $"({user.Id}, '{hashcode}', '{date}', '{type}', {amount}, '{group}', {balance});" +
-                    $"CALL MERGE_TRANSACTIONS_TEMP();" +
-                    $"COMMIT;";
-
-                MySqlCommand command = new MySqlCommand(qStr, connection);
-                command.ExecuteNonQuery();
+                InsertTransection transection = new InsertTransection(user.Id,date,type,amount,group);
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
                 Hide();

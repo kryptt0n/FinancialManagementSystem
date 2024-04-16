@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            ImportBtn = new Button();
+            GenerateBtn = new Button();
+            BackBtn = new Button();
+            CopyTranBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -43,41 +44,53 @@
             dataGridView1.Size = new Size(415, 447);
             dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // ImportBtn
             // 
-            button1.Location = new Point(511, 92);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            ImportBtn.Location = new Point(496, 92);
+            ImportBtn.Name = "ImportBtn";
+            ImportBtn.Size = new Size(90, 36);
+            ImportBtn.TabIndex = 1;
+            ImportBtn.Text = "Import";
+            ImportBtn.UseVisualStyleBackColor = true;
+            ImportBtn.Click += ImportBtn_Click;
             // 
-            // button2
+            // GenerateBtn
             // 
-            button2.Location = new Point(511, 121);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            GenerateBtn.Location = new Point(496, 134);
+            GenerateBtn.Name = "GenerateBtn";
+            GenerateBtn.Size = new Size(90, 42);
+            GenerateBtn.TabIndex = 2;
+            GenerateBtn.Text = "Generate";
+            GenerateBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BackBtn
             // 
-            button3.Location = new Point(511, 516);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            BackBtn.Location = new Point(501, 552);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(85, 38);
+            BackBtn.TabIndex = 3;
+            BackBtn.Text = "Back";
+            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.Click += BackBtn_Click;
+            // 
+            // CopyTranBtn
+            // 
+            CopyTranBtn.Location = new Point(501, 489);
+            CopyTranBtn.Name = "CopyTranBtn";
+            CopyTranBtn.Size = new Size(90, 50);
+            CopyTranBtn.TabIndex = 4;
+            CopyTranBtn.Text = "Copy Transaction";
+            CopyTranBtn.UseVisualStyleBackColor = true;
             // 
             // UserReport
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(626, 602);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(CopyTranBtn);
+            Controls.Add(BackBtn);
+            Controls.Add(GenerateBtn);
+            Controls.Add(ImportBtn);
             Controls.Add(dataGridView1);
             Name = "UserReport";
             Text = "UserReport";
@@ -88,8 +101,9 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button ImportBtn;
+        private Button GenerateBtn;
+        private Button BackBtn;
+        private Button CopyTranBtn;
     }
 }
