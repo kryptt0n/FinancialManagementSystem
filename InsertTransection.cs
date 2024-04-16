@@ -37,7 +37,7 @@ namespace FinancialManagementSystem
         {
             try
             {
-                string hashcode = string.Concat(amount, date, type, group);
+                string hashcode = string.Concat(userID, amount, date, type, group);
                 string qStr = "INSERT INTO TRANSACTIONS(UID, HASHCODE, TRAN_DATE, TYPE, AMOUNT, TRAN_GROUP) VALUES " +
                       $"({userID}, '{hashcode}', '{date}', '{type}', {amount}, '{group}');" +
                       $"CALL MERGE_TRANSACTIONS_TEMP();" +
