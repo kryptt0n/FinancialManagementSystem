@@ -22,6 +22,12 @@ namespace FinancialManagementSystem
             connection = Program.database.GetConnection();
         }
 
+        public TransactionDetail(string type, string group) : this()
+        {
+            TypeCb.Text = type;
+            GroupTb.Text = group;
+        }
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             if (ValidateFields())

@@ -50,13 +50,15 @@ namespace FinancialManagementSystem
         {
             string qStr = GetSelectQuery();
             MySqlCommand command = new MySqlCommand(qStr, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-            DataTable table = new DataTable();
-            table.Load(reader);
-            TransactionsGv.DataSource = table;
-            foreach (DataRow row in table.Rows)
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
-                row["TYPE"] = row["TYPE"].ToString() == "EX" ? "Expense" : "Income";
+                DataTable table = new DataTable();
+                table.Load(reader);
+                TransactionsGv.DataSource = table;
+                foreach (DataRow row in table.Rows)
+                {
+                    row["TYPE"] = row["TYPE"].ToString() == "EX" ? "Expense" : "Income";
+                }
             }
             TransactionsGv.Columns["UID"].Visible = false;
             TransactionsGv.Columns["TRAN_ID"].Visible = false;
@@ -66,13 +68,13 @@ namespace FinancialManagementSystem
         private string GetSelectQuery()
         {
             string qStr = $"SELECT * FROM TRANSACTIONS WHERE UID = {user.Id} ";
-            
+
             if (FromDtp.Checked)
                 qStr += $"AND TRAN_DATE >= '{FromDtp.Value.ToString("yyyy-MM-dd HH:mm:ss")}' ";
-           
+
             if (ToDtp.Checked)
                 qStr += $"AND TRAN_DATE <= '{ToDtp.Value.ToString("yyyy-MM-dd HH:mm:ss")}' ";
-            
+
             if (TypeCb.SelectedIndex != -1 && TypeCb.Text != "None")
                 qStr += $"AND TYPE = '{(TypeCb.Text.Equals("Income") ? "IN" : "EX")}' ";
 
@@ -102,6 +104,30 @@ namespace FinancialManagementSystem
         private void GroupTb_TextChanged(object sender, EventArgs e)
         {
             LoadAllData();
+        }
+
+        private void CopyTranBtn_Click(object sender, EventArgs e)
+        {
+            if (TransactionsGv.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = TransactionsGv.SelectedRows[0];
+                string type = selectedRow.Cells["TYPE"].Value.ToString();
+                string group = selectedRow.Cells["TRAN_GROUP"].Value.ToString();
+
+                TransactionDetail form = new TransactionDetail(type, group);
+                form.Show();
+                Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Choose transaction to copy!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GenerateBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

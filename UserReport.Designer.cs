@@ -56,45 +56,51 @@
             // 
             // ImportBtn
             // 
-            ImportBtn.Location = new Point(930, 851);
+            ImportBtn.BackColor = Color.GreenYellow;
+            ImportBtn.Location = new Point(928, 749);
             ImportBtn.Margin = new Padding(6);
             ImportBtn.Name = "ImportBtn";
             ImportBtn.Size = new Size(167, 77);
             ImportBtn.TabIndex = 1;
             ImportBtn.Text = "Import";
-            ImportBtn.UseVisualStyleBackColor = true;
+            ImportBtn.UseVisualStyleBackColor = false;
             ImportBtn.Click += ImportBtn_Click;
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new Point(930, 941);
+            GenerateBtn.BackColor = Color.GreenYellow;
+            GenerateBtn.Location = new Point(928, 839);
             GenerateBtn.Margin = new Padding(6);
             GenerateBtn.Name = "GenerateBtn";
             GenerateBtn.Size = new Size(167, 90);
             GenerateBtn.TabIndex = 2;
             GenerateBtn.Text = "Generate";
-            GenerateBtn.UseVisualStyleBackColor = true;
+            GenerateBtn.UseVisualStyleBackColor = false;
+            GenerateBtn.Click += GenerateBtn_Click;
             // 
             // BackBtn
             // 
-            BackBtn.Location = new Point(930, 1178);
+            BackBtn.BackColor = Color.GreenYellow;
+            BackBtn.Location = new Point(928, 1064);
             BackBtn.Margin = new Padding(6);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(158, 81);
+            BackBtn.Size = new Size(167, 86);
             BackBtn.TabIndex = 3;
             BackBtn.Text = "Back";
-            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += BackBtn_Click;
             // 
             // CopyTranBtn
             // 
-            CopyTranBtn.Location = new Point(930, 1043);
+            CopyTranBtn.BackColor = Color.GreenYellow;
+            CopyTranBtn.Location = new Point(928, 941);
             CopyTranBtn.Margin = new Padding(6);
             CopyTranBtn.Name = "CopyTranBtn";
             CopyTranBtn.Size = new Size(167, 107);
             CopyTranBtn.TabIndex = 4;
             CopyTranBtn.Text = "Copy Transaction";
-            CopyTranBtn.UseVisualStyleBackColor = true;
+            CopyTranBtn.UseVisualStyleBackColor = false;
+            CopyTranBtn.Click += CopyTranBtn_Click;
             // 
             // label1
             // 
@@ -178,6 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Honeydew;
             ClientSize = new Size(1163, 1284);
             Controls.Add(GroupTb);
             Controls.Add(GroupLb);
