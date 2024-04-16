@@ -34,8 +34,10 @@ namespace FinancialManagementSystem
                 string hashcode = string.Concat(amount, date, type, group);
                 string balance = GetBalance(date).ToString("0.##");
 
-                string qStr = "INSERT INTO TRANSACTIONS VALUES " +
-                    $"({user.Id}, '{hashcode}', '{date}', '{type}', {amount}, '{group}', {balance})";
+                string qStr = "INSERT INTO TRANSACTIONS(UID, HASHCODE, TRAN_DATE, TYPE, AMOUNT, TRAN_GROUP, BALANCE) VALUES " +
+                    $"({user.Id}, '{hashcode}', '{date}', '{type}', {amount}, '{group}', {balance});" +
+                    $"CALL MERGE_TRANSACTIONS_TEMP();" +
+                    $"COMMIT;";
 
                 MySqlCommand command = new MySqlCommand(qStr, connection);
                 command.ExecuteNonQuery();
@@ -56,11 +58,19 @@ namespace FinancialManagementSystem
 
             if (int.TryParse(AmountTb.Text, out amount))
             {
-                if (amount <= 0)
-                    MessageBox.Show("Amount should be greater than zero!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return amount > 0;
+                if (TypeCb.Text == "Income")
+                {
+                    if (amount <= 0)
+                        MessageBox.Show("Amount should be greater than zero!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return amount > 0;
+                } else
+                {
+                    if (amount >= 0)
+                        MessageBox.Show("Amount should be less than zero!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return amount < 0;
+                }
             }
             MessageBox.Show("Enter valid amount!", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
