@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            TransactionsGv = new DataGridView();
             ImportBtn = new Button();
             GenerateBtn = new Button();
             BackBtn = new Button();
             CopyTranBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TransactionsGv).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // TransactionsGv
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 92);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(415, 447);
-            dataGridView1.TabIndex = 0;
+            TransactionsGv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TransactionsGv.Location = new Point(71, 196);
+            TransactionsGv.Margin = new Padding(6, 6, 6, 6);
+            TransactionsGv.Name = "TransactionsGv";
+            TransactionsGv.RowHeadersWidth = 82;
+            TransactionsGv.Size = new Size(771, 954);
+            TransactionsGv.TabIndex = 0;
             // 
             // ImportBtn
             // 
-            ImportBtn.Location = new Point(496, 92);
+            ImportBtn.Location = new Point(921, 196);
+            ImportBtn.Margin = new Padding(6, 6, 6, 6);
             ImportBtn.Name = "ImportBtn";
-            ImportBtn.Size = new Size(90, 36);
+            ImportBtn.Size = new Size(167, 77);
             ImportBtn.TabIndex = 1;
             ImportBtn.Text = "Import";
             ImportBtn.UseVisualStyleBackColor = true;
@@ -56,18 +59,20 @@
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new Point(496, 134);
+            GenerateBtn.Location = new Point(921, 286);
+            GenerateBtn.Margin = new Padding(6, 6, 6, 6);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new Size(90, 42);
+            GenerateBtn.Size = new Size(167, 90);
             GenerateBtn.TabIndex = 2;
             GenerateBtn.Text = "Generate";
             GenerateBtn.UseVisualStyleBackColor = true;
             // 
             // BackBtn
             // 
-            BackBtn.Location = new Point(501, 552);
+            BackBtn.Location = new Point(930, 1178);
+            BackBtn.Margin = new Padding(6, 6, 6, 6);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(85, 38);
+            BackBtn.Size = new Size(158, 81);
             BackBtn.TabIndex = 3;
             BackBtn.Text = "Back";
             BackBtn.UseVisualStyleBackColor = true;
@@ -75,32 +80,34 @@
             // 
             // CopyTranBtn
             // 
-            CopyTranBtn.Location = new Point(501, 489);
+            CopyTranBtn.Location = new Point(930, 1043);
+            CopyTranBtn.Margin = new Padding(6, 6, 6, 6);
             CopyTranBtn.Name = "CopyTranBtn";
-            CopyTranBtn.Size = new Size(90, 50);
+            CopyTranBtn.Size = new Size(167, 107);
             CopyTranBtn.TabIndex = 4;
             CopyTranBtn.Text = "Copy Transaction";
             CopyTranBtn.UseVisualStyleBackColor = true;
             // 
             // UserReport
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(626, 602);
+            ClientSize = new Size(1163, 1284);
             Controls.Add(CopyTranBtn);
             Controls.Add(BackBtn);
             Controls.Add(GenerateBtn);
             Controls.Add(ImportBtn);
-            Controls.Add(dataGridView1);
+            Controls.Add(TransactionsGv);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "UserReport";
             Text = "UserReport";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TransactionsGv).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView TransactionsGv;
         private Button ImportBtn;
         private Button GenerateBtn;
         private Button BackBtn;

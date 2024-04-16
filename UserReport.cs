@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace FinancialManagementSystem
 {
     public partial class UserReport : Form
     {
+
+        MySqlConnection connection;
+        User user = CurrentUser.User;
+
         public UserReport()
         {
             InitializeComponent();
+            connection = Program.database.GetConnection();
+            LoadAllData();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -36,6 +43,19 @@ namespace FinancialManagementSystem
                 parser.ConverterToCharacter();
             }
 
+        }
+
+        private void LoadAllData()
+        {
+            string qStr = $"SELECT * FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC,TRAN_ID DESC";
+            MySqlCommand command = new MySqlCommand(qStr, connection);
+            MySqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            TransactionsGv.DataSource = table;
+            TransactionsGv.Columns["UID"].Visible = false;
+            TransactionsGv.Columns["TRAN_ID"].Visible = false;
+            TransactionsGv.Columns["HASHCODE"].Visible = false;
         }
     }
 }
