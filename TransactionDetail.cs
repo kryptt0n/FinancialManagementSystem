@@ -27,11 +27,10 @@ namespace FinancialManagementSystem
             if (ValidateFields())
             {
                 int amount = int.Parse(AmountTb.Text);
-                string date = TransactionDtp.Value.ToString("yyyy-MM-dd");
+                string date = TransactionDtp.Value.ToString("yyyy-MM-dd HH:mm:ss");
                 string typeString = TypeCb.Text;
                 string type = typeString.Equals("Income") ? "IN" : "EX";
                 string group = GroupTb.Text;
-                string balance = GetBalance(date).ToString("0.##");
                 if (type == "EX")
                 {
                     amount = amount * -1;
@@ -86,12 +85,12 @@ namespace FinancialManagementSystem
             return TypeCb.SelectedIndex != -1;
         }
 
-        private double GetBalance(string date)
+        private double GetBalance()
         {
             double result = 0;
             try
             {
-                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} AND TRAN_DATE <= {date} ORDER BY TRAN_DATE DESC LIMIT 1 ";
+                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC LIMIT 1 ";
                 MySqlCommand command = new MySqlCommand(balance, connection);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {

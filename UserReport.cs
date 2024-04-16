@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using Google.Protobuf;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,15 +48,60 @@ namespace FinancialManagementSystem
 
         private void LoadAllData()
         {
-            string qStr = $"SELECT * FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC,TRAN_ID DESC";
+            string qStr = GetSelectQuery();
             MySqlCommand command = new MySqlCommand(qStr, connection);
             MySqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
             TransactionsGv.DataSource = table;
+            foreach (DataRow row in table.Rows)
+            {
+                row["TYPE"] = row["TYPE"].ToString() == "EX" ? "Expense" : "Income";
+            }
             TransactionsGv.Columns["UID"].Visible = false;
             TransactionsGv.Columns["TRAN_ID"].Visible = false;
             TransactionsGv.Columns["HASHCODE"].Visible = false;
+        }
+
+        private string GetSelectQuery()
+        {
+            string qStr = $"SELECT * FROM TRANSACTIONS WHERE UID = {user.Id} ";
+            
+            if (FromDtp.Checked)
+                qStr += $"AND TRAN_DATE >= '{FromDtp.Value.ToString("yyyy-MM-dd HH:mm:ss")}' ";
+           
+            if (ToDtp.Checked)
+                qStr += $"AND TRAN_DATE <= '{ToDtp.Value.ToString("yyyy-MM-dd HH:mm:ss")}' ";
+            
+            if (TypeCb.SelectedIndex != -1 && TypeCb.Text != "None")
+                qStr += $"AND TYPE = '{(TypeCb.Text.Equals("Income") ? "IN" : "EX")}' ";
+
+            if (!string.IsNullOrEmpty(GroupTb.Text))
+                qStr += $"AND TRAN_GROUP LIKE '%{GroupTb.Text}%' ";
+
+            qStr += $"ORDER BY TRAN_DATE DESC,TRAN_ID DESC";
+
+            return qStr;
+        }
+
+        private void FromDtp_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAllData();
+        }
+
+        private void ToDtp_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAllData();
+        }
+
+        private void TypeCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadAllData();
+        }
+
+        private void GroupTb_TextChanged(object sender, EventArgs e)
+        {
+            LoadAllData();
         }
     }
 }
