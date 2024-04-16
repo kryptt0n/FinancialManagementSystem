@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            TransactionsGv = new DataGridView();
             ImportBtn = new Button();
             GenerateBtn = new Button();
             BackBtn = new Button();
             CopyTranBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TransactionsGv).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // TransactionsGv
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 92);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(415, 447);
-            dataGridView1.TabIndex = 0;
+            TransactionsGv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TransactionsGv.Location = new Point(38, 92);
+            TransactionsGv.Name = "TransactionsGv";
+            TransactionsGv.RowHeadersWidth = 82;
+            TransactionsGv.Size = new Size(415, 447);
+            TransactionsGv.TabIndex = 0;
             // 
             // ImportBtn
             // 
@@ -87,21 +88,21 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(626, 602);
+            ClientSize = new Size(617, 619);
             Controls.Add(CopyTranBtn);
             Controls.Add(BackBtn);
             Controls.Add(GenerateBtn);
             Controls.Add(ImportBtn);
-            Controls.Add(dataGridView1);
+            Controls.Add(TransactionsGv);
             Name = "UserReport";
             Text = "UserReport";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TransactionsGv).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView TransactionsGv;
         private Button ImportBtn;
         private Button GenerateBtn;
         private Button BackBtn;

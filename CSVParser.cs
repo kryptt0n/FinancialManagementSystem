@@ -47,14 +47,14 @@ namespace FinancialManagementSystem
                 try
                 {
                     stringData = strings.Dequeue();
-                    insertTime = DateTime.Parse(stringData[1]);
-                    amount = Double.Parse(stringData[0]);
-                    type = stringData[2];
+                    insertTime = Convert.ToDateTime(stringData[0]);
+                    amount = Double.Parse(stringData[2]);
+                    type = stringData[1];
 
                     if (CheckData())
                     {
 
-                        InsertTransection transection = new InsertTransection(user.Id, stringData[1], stringData[2],amount, stringData[3]);
+                        InsertTransection transection = new InsertTransection(user.Id, stringData[0], stringData[1],amount, stringData[3]);
                         if (transection.successTransfer) { sucessCounter++; }
                         else { skipCounter++; }
                     }

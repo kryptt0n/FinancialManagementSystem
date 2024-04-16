@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,40 +11,55 @@ namespace FinancialManagementSystem
     internal class CSVExporter
     {
         private string filePath;
+        private DataTable table;
         private User user;
-        private TextFieldParser parser;
-        private Queue<string[]> strings;
-        private string[] stringData;
-        private DateTime insertTime;
-        private double amount;
-        private string type;
-        public CSVExporter(string path)
+
+        public CSVExporter(DataTable table, string path)
         {
             filePath = path;
+            this.table = table;
+            user = CurrentUser.User;
         }
         public void exportCSV()
         {
-            var csv = new StringBuilder();
-            for (int i = 0; i < characterList.Count; i++)
+            table.PrimaryKey = null;
+            table.Columns.Remove("UID");
+            table.Columns.Remove("HASHCODE");
+            table.Columns.Remove("TRAN_ID");
+            table.Columns.Remove("BALANCE");
+
+            StringBuilder sb = new StringBuilder();
+
+            IEnumerable<string> columnNames = table.Columns.Cast<DataColumn>().
+                                              Select(column => column.ColumnName);
+            sb.AppendLine(string.Join(",", columnNames));
+
+            foreach (DataRow row in table.Rows)
             {
-                try
+                IEnumerable<string?> fields = row.ItemArray.Select(field => 
                 {
-                    AdaptorCharactorToString adaptor = new AdaptorCharactorToString();
-                    string stringData = adaptor.ConvertCharacterToString(characterList[i]);
-                    csv.AppendLine(stringData);
-                }
-                catch
-                {
-                    MessageBox.Show($"Error occure the No.{i + 1} Charater, will proceed to the next Charater", "info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    continue;
-                }
+                    string value = field.ToString();
+                    if(DateTime.TryParse(value,out DateTime InsertDate))
+                    {
+                        return InsertDate.ToString("yyyy-MM-dd HH:mm:ss");
+                    }
+                    else if (value == "Income")
+                    {
+                        return "IN";
+                    }
+                    else if (value == "Expense")
+                    {
+                        return "EX";
+                    }
+                    return value;
+                    });
+                sb.AppendLine(string.Join(",", fields));
             }
-            if (csv.Length > 0)
+            if (sb.Length > 0)
             {
-                File.WriteAllText(filePath, csv.ToString());
+                File.WriteAllText(filePath, sb.ToString());
                 MessageBox.Show($"Exporting Done", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
 
         }
     }
