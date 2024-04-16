@@ -41,6 +41,7 @@
             TypeLb = new Label();
             GroupLb = new Label();
             GroupTb = new TextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)TransactionsGv).BeginInit();
             SuspendLayout();
             // 
@@ -51,13 +52,13 @@
             TransactionsGv.Margin = new Padding(6);
             TransactionsGv.Name = "TransactionsGv";
             TransactionsGv.RowHeadersWidth = 82;
-            TransactionsGv.Size = new Size(771, 954);
+            TransactionsGv.Size = new Size(1107, 954);
             TransactionsGv.TabIndex = 0;
             // 
             // ImportBtn
             // 
             ImportBtn.BackColor = Color.GreenYellow;
-            ImportBtn.Location = new Point(928, 749);
+            ImportBtn.Location = new Point(1226, 747);
             ImportBtn.Margin = new Padding(6);
             ImportBtn.Name = "ImportBtn";
             ImportBtn.Size = new Size(167, 77);
@@ -69,7 +70,7 @@
             // GenerateBtn
             // 
             GenerateBtn.BackColor = Color.GreenYellow;
-            GenerateBtn.Location = new Point(928, 839);
+            GenerateBtn.Location = new Point(1226, 837);
             GenerateBtn.Margin = new Padding(6);
             GenerateBtn.Name = "GenerateBtn";
             GenerateBtn.Size = new Size(167, 90);
@@ -81,7 +82,7 @@
             // BackBtn
             // 
             BackBtn.BackColor = Color.GreenYellow;
-            BackBtn.Location = new Point(928, 1064);
+            BackBtn.Location = new Point(1226, 1062);
             BackBtn.Margin = new Padding(6);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(167, 86);
@@ -93,7 +94,7 @@
             // CopyTranBtn
             // 
             CopyTranBtn.BackColor = Color.GreenYellow;
-            CopyTranBtn.Location = new Point(928, 941);
+            CopyTranBtn.Location = new Point(1226, 939);
             CopyTranBtn.Margin = new Padding(6);
             CopyTranBtn.Name = "CopyTranBtn";
             CopyTranBtn.Size = new Size(167, 107);
@@ -148,7 +149,7 @@
             // 
             TypeCb.FormattingEnabled = true;
             TypeCb.Items.AddRange(new object[] { "None", "Income", "Expense" });
-            TypeCb.Location = new Point(885, 196);
+            TypeCb.Location = new Point(1211, 198);
             TypeCb.Name = "TypeCb";
             TypeCb.Size = new Size(242, 40);
             TypeCb.TabIndex = 9;
@@ -157,7 +158,7 @@
             // TypeLb
             // 
             TypeLb.AutoSize = true;
-            TypeLb.Location = new Point(885, 146);
+            TypeLb.Location = new Point(1211, 147);
             TypeLb.Name = "TypeLb";
             TypeLb.Size = new Size(65, 32);
             TypeLb.TabIndex = 10;
@@ -166,7 +167,7 @@
             // GroupLb
             // 
             GroupLb.AutoSize = true;
-            GroupLb.Location = new Point(885, 276);
+            GroupLb.Location = new Point(1211, 266);
             GroupLb.Name = "GroupLb";
             GroupLb.Size = new Size(80, 32);
             GroupLb.TabIndex = 11;
@@ -174,18 +175,29 @@
             // 
             // GroupTb
             // 
-            GroupTb.Location = new Point(885, 326);
+            GroupTb.Location = new Point(1211, 324);
             GroupTb.Name = "GroupTb";
             GroupTb.Size = new Size(242, 39);
             GroupTb.TabIndex = 12;
             GroupTb.TextChanged += GroupTb_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            label3.Location = new Point(71, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(190, 65);
+            label3.TabIndex = 13;
+            label3.Text = "Report";
             // 
             // UserReport
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
-            ClientSize = new Size(1163, 1284);
+            ClientSize = new Size(1505, 1220);
+            Controls.Add(label3);
             Controls.Add(GroupTb);
             Controls.Add(GroupLb);
             Controls.Add(TypeLb);
@@ -222,5 +234,6 @@
         private Label TypeLb;
         private Label GroupLb;
         private TextBox GroupTb;
+        private Label label3;
     }
 }
