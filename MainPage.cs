@@ -26,7 +26,7 @@ namespace FinancialManagementSystem
         {
             try
             {
-                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC LIMIT 1 ";
+                string balance = $"SELECT BALANCE FROM TRANSACTIONS WHERE UID = {user.Id} ORDER BY TRAN_DATE DESC,TRAN_ID DESC LIMIT 1 ";
                 MySqlCommand command = new MySqlCommand(balance, connection);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
