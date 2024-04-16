@@ -32,6 +32,10 @@ namespace FinancialManagementSystem
                 string type = typeString.Equals("Income") ? "IN" : "EX";
                 string group = GroupTb.Text;
                 string balance = GetBalance(date).ToString("0.##");
+                if (type == "EX")
+                {
+                    amount = amount * -1;
+                }
                 InsertTransection transection = new InsertTransection(user.Id,date,type,amount,group);
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
@@ -50,19 +54,10 @@ namespace FinancialManagementSystem
 
             if (int.TryParse(AmountTb.Text, out amount))
             {
-                if (TypeCb.Text == "Income")
-                {
                     if (amount <= 0)
                         MessageBox.Show("Amount should be greater than zero!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return amount > 0;
-                } else
-                {
-                    if (amount >= 0)
-                        MessageBox.Show("Amount should be less than zero!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return amount < 0;
-                }
             }
             MessageBox.Show("Enter valid amount!", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);

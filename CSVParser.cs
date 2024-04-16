@@ -47,7 +47,7 @@ namespace FinancialManagementSystem
                 try
                 {
                     stringData = strings.Dequeue();
-                    insertTime = Convert.ToDateTime(stringData[1]);
+                    insertTime = DateTime.Parse(stringData[1]);
                     amount = Double.Parse(stringData[0]);
                     type = stringData[2];
 
