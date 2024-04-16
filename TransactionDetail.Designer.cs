@@ -114,7 +114,7 @@
             // 
             // TransactionDtp
             // 
-            TransactionDtp.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            TransactionDtp.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             TransactionDtp.Format = DateTimePickerFormat.Custom;
             TransactionDtp.Location = new Point(237, 148);
             TransactionDtp.Name = "TransactionDtp";
