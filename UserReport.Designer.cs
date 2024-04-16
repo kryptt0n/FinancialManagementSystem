@@ -62,6 +62,7 @@
             GenerateBtn.TabIndex = 2;
             GenerateBtn.Text = "Generate";
             GenerateBtn.UseVisualStyleBackColor = true;
+            GenerateBtn.Click += GenerateBtn_Click;
             // 
             // BackBtn
             // 

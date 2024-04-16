@@ -37,5 +37,10 @@ namespace FinancialManagementSystem
             }
 
         }
+
+        private void GenerateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
