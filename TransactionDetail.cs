@@ -41,7 +41,7 @@ namespace FinancialManagementSystem
                 {
                     amount = amount * -1;
                 }
-                InsertTransection transection = new InsertTransection(user.Id,date,type,amount,group);
+                InsertTransaction transaction = new InsertTransaction(user.Id,date,type,amount,group);
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
                 Hide();
