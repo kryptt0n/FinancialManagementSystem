@@ -202,6 +202,7 @@
             GenerateReportBtn.TabIndex = 14;
             GenerateReportBtn.Text = "Generate Report";
             GenerateReportBtn.UseVisualStyleBackColor = false;
+            GenerateReportBtn.Click += GenerateReportBtn_Click;
             // 
             // UserReportPage
             // 

@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf;
 using MySqlConnector;
+using Org.BouncyCastle.Bcpg.Sig;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,8 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace FinancialManagementSystem
 {
@@ -67,7 +70,7 @@ namespace FinancialManagementSystem
         }
 
 
-            private void LoadAllData()
+        private void LoadAllData()
         {
             string qStr = GetSelectQuery();
             MySqlCommand command = new MySqlCommand(qStr, connection);
@@ -146,5 +149,30 @@ namespace FinancialManagementSystem
             }
         }
 
+        private void GenerateReportBtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "pdf files (*.pdf)|*.pdf";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog1.FileName;
+                DataTable exportTable = ((DataTable)TransactionsGv.DataSource).Copy();
+                ReportDocumentDataSource source = new ReportDocumentDataSource(exportTable);
+                source.CreateSource();
+                var document = new ReportDocument(source);
+                document.ExportPDF(filePath);
+
+                System.Diagnostics.Process.Start("explorer.exe", $"/select,\"{filePath}\"");
+            }
+        }
+
+        private void TransactionsGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
