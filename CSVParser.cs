@@ -54,7 +54,7 @@ namespace FinancialManagementSystem
                     if (CheckData())
                     {
 
-                        InsertTransaction transection = new InsertTransaction(user.Id, stringData[1], stringData[2],amount, stringData[3]);
+                        InsertTransaction transection = new InsertTransaction(user.Id, stringData[0], stringData[1],amount, stringData[3]);
                         if (transection.successTransfer) { sucessCounter++; }
                         else { skipCounter++; }
                     }
