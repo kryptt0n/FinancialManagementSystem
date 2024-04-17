@@ -6,7 +6,7 @@ namespace FinancialManagementSystem
 {
     public partial class MainPage : Form
     {
-        private MySqlConnection connection = Database.Connection;
+        private MySqlConnection connection = Program.database.GetConnection();
         public User user;
         public MainPage()
         {
@@ -110,14 +110,14 @@ namespace FinancialManagementSystem
 
         private void ViewReportBtn_Click(object sender, EventArgs e)
         {
-            UserReport userReport = new UserReport();
+            UserReportPage userReport = new UserReportPage();
             userReport.Show();
             this.Hide();
         }
 
         private void AddTransactionBtn_Click(object sender, EventArgs e)
         {
-            TransactionDetail transactionDetail = new TransactionDetail();
+            TransactionDetailPage transactionDetail = new TransactionDetailPage();
             transactionDetail.Show();
             Hide();
         }

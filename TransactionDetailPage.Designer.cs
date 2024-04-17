@@ -1,6 +1,6 @@
 ﻿namespace FinancialManagementSystem
 {
-    partial class TransactionDetail
+    partial class TransactionDetailPage
     {
         /// <summary>
         /// Required designer variable.

@@ -14,13 +14,13 @@ using System.Windows.Forms;
 
 namespace FinancialManagementSystem
 {
-    public partial class UserReport : Form
+    public partial class UserReportPage : Form
     {
 
         MySqlConnection connection;
         User user = CurrentUser.User;
 
-        public UserReport()
+        public UserReportPage()
         {
             InitializeComponent();
             connection = Program.database.GetConnection();
@@ -135,7 +135,7 @@ namespace FinancialManagementSystem
                 string type = selectedRow.Cells["TYPE"].Value.ToString();
                 string group = selectedRow.Cells["TRAN_GROUP"].Value.ToString();
 
-                TransactionDetail form = new TransactionDetail(type, group);
+                TransactionDetailPage form = new TransactionDetailPage(type, group);
                 form.Show();
                 Hide();
 

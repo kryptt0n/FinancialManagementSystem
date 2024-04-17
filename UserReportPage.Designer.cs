@@ -1,6 +1,6 @@
 ﻿namespace FinancialManagementSystem
 {
-    partial class UserReport
+    partial class UserReportPage
     {
         /// <summary>
         /// Required designer variable.

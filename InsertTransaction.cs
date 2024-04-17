@@ -10,7 +10,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FinancialManagementSystem
 {
-    public class InsertTransection
+    public class InsertTransaction
     {
         private MySqlConnection connection;
         private User user;
@@ -20,7 +20,7 @@ namespace FinancialManagementSystem
         string type;
         double amount;
         string group;
-        public InsertTransection(int userID, string date,string type, double amount, string group)
+        public InsertTransaction(int userID, string date,string type, double amount, string group)
         {
             user = CurrentUser.User;
             connection = Program.database.GetConnection();
@@ -30,10 +30,10 @@ namespace FinancialManagementSystem
             this.amount = amount;
             this.group = group;
             successTransfer = false;
-            insertData();
+            InsertData();
 
         }
-        private void insertData()
+        private void InsertData()
         {
             try
             {

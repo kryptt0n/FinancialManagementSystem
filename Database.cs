@@ -10,7 +10,7 @@ namespace FinancialManagementSystem
 {
     public class Database
     {
-        public static MySqlConnection Connection;
+        private static MySqlConnection Connection;
         public static Database Instance;
         private string host;
         private string port;
