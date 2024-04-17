@@ -6,7 +6,7 @@ namespace FinancialManagementSystem
 {
     public partial class MainPage : Form
     {
-        private MySqlConnection connection = Database.Connection;
+        private MySqlConnection connection = Program.database.GetConnection();
         public User user;
         public MainPage()
         {
