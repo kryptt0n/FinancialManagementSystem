@@ -25,19 +25,25 @@ namespace FinancialManagementSystem
 
         public void ExportPDF(string filePath)
         {
-            var pdfWriter = new PdfWriter(filePath);
-            var pdfDocument = new PdfDocument(pdfWriter);
-            
-            var document = new Document(pdfDocument);
+            try
+            {
+                var pdfWriter = new PdfWriter(filePath);
+                var pdfDocument = new PdfDocument(pdfWriter);
+
+                var document = new Document(pdfDocument);
 
 
-            AddHeader(document);
-            AddContent(document);
+                AddContent(document);
 
-            document.Close();
+                document.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Selected File Location is in use","Error",MessageBoxButtons.OK);
+            }
         }
 
-        void AddHeader(Document document)
+        void AddContent(Document document)
         {
             var titleStyle = new Style()
                 .SetFontSize(20)
@@ -49,11 +55,6 @@ namespace FinancialManagementSystem
             document.Add(new Paragraph("Issue date: ").Add(DateTime.Now.ToString("dd-MM-yyyy")));
             document.Add(new Paragraph("UserName: ").Add(source.GetUname()));
 
-            document.Add(new AreaBreak());
-        }
-
-        void AddContent(Document document)
-        {
             float[] pointColumnWidths = { 50F, 150F, 100F, 100F, 100F, 100F };
             Table table = new Table(pointColumnWidths);
 
@@ -65,20 +66,22 @@ namespace FinancialManagementSystem
             table.AddCell(new Cell().Add(new Paragraph("Balance")));
 
 
-            for (int i = 1; i < source.arrayList!.Count; i++)
+            for (int i = 0; i < source.arrayList!.Count-1; i++)
             {
                 var rowData = (ArrayList)source.arrayList[i];
                 if (rowData[1] == "IN") rowData[1] = "Income";
-                else rowData[1] = "Expense"
-                table.AddCell(new Cell().Add(new Paragraph(i.ToString())));
+                else rowData[1] = "Expense";
+                int counter = i+1;
+                table.AddCell(new Cell().Add(new Paragraph(counter.ToString())));
                 table.AddCell(new Cell().Add(new Paragraph(rowData[0].ToString())));
-                table.AddCell(new Cell().Add(new Paragraph((String)rowData[1])));
-                table.AddCell(new Cell().Add(new Paragraph(rowData[2].ToString())));
-                table.AddCell(new Cell().Add(new Paragraph((String)rowData[3])));
-                table.AddCell(new Cell().Add(new Paragraph(rowData[4].ToString())));
+                table.AddCell(new Cell().Add(new Paragraph((string)rowData[1]!)));
+                table.AddCell(new Cell().Add(new Paragraph((string)rowData[2]!)));
+                table.AddCell(new Cell().Add(new Paragraph((string)rowData[3]!)));
+                table.AddCell(new Cell().Add(new Paragraph((string)rowData[4]!)));
             }
 
             document.Add(table);
         }
+
     }
 }

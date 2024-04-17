@@ -30,6 +30,7 @@ namespace FinancialManagementSystem
         public ReportDocumentDataSource CreateSource()
         {
             TableToArrayList();
+            arrayList.Reverse();
             return this;
         }
         private void TableToArrayList()
