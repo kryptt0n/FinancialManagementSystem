@@ -49,17 +49,18 @@
             // TransactionsGv
             // 
             TransactionsGv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TransactionsGv.Location = new Point(71, 196);
+            TransactionsGv.Location = new Point(87, 198);
             TransactionsGv.Margin = new Padding(6);
             TransactionsGv.Name = "TransactionsGv";
             TransactionsGv.RowHeadersWidth = 82;
-            TransactionsGv.Size = new Size(1107, 954);
+            TransactionsGv.Size = new Size(642, 580);
             TransactionsGv.TabIndex = 0;
+            TransactionsGv.CellContentClick += TransactionsGv_CellContentClick;
             // 
             // ImportBtn
             // 
             ImportBtn.BackColor = Color.GreenYellow;
-            ImportBtn.Location = new Point(1226, 747);
+            ImportBtn.Location = new Point(781, 442);
             ImportBtn.Margin = new Padding(6);
             ImportBtn.Name = "ImportBtn";
             ImportBtn.Size = new Size(90, 36);
@@ -71,7 +72,7 @@
             // GenerateBtn
             // 
             GenerateBtn.BackColor = Color.GreenYellow;
-            GenerateBtn.Location = new Point(1226, 795);
+            GenerateBtn.Location = new Point(781, 490);
             GenerateBtn.Margin = new Padding(6);
             GenerateBtn.Name = "GenerateBtn";
             GenerateBtn.Size = new Size(90, 33);
@@ -95,7 +96,7 @@
             // CopyTranBtn
             // 
             CopyTranBtn.BackColor = Color.GreenYellow;
-            CopyTranBtn.Location = new Point(1226, 939);
+            CopyTranBtn.Location = new Point(781, 634);
             CopyTranBtn.Margin = new Padding(6);
             CopyTranBtn.Name = "CopyTranBtn";
             CopyTranBtn.Size = new Size(90, 50);
@@ -150,7 +151,7 @@
             // 
             TypeCb.FormattingEnabled = true;
             TypeCb.Items.AddRange(new object[] { "None", "Income", "Expense" });
-            TypeCb.Location = new Point(1211, 198);
+            TypeCb.Location = new Point(781, 259);
             TypeCb.Name = "TypeCb";
             TypeCb.Size = new Size(242, 23);
             TypeCb.TabIndex = 9;
@@ -159,7 +160,7 @@
             // TypeLb
             // 
             TypeLb.AutoSize = true;
-            TypeLb.Location = new Point(1211, 147);
+            TypeLb.Location = new Point(781, 208);
             TypeLb.Name = "TypeLb";
             TypeLb.Size = new Size(31, 15);
             TypeLb.TabIndex = 10;
@@ -168,7 +169,7 @@
             // GroupLb
             // 
             GroupLb.AutoSize = true;
-            GroupLb.Location = new Point(1211, 266);
+            GroupLb.Location = new Point(781, 327);
             GroupLb.Name = "GroupLb";
             GroupLb.Size = new Size(40, 15);
             GroupLb.TabIndex = 11;
@@ -176,7 +177,7 @@
             // 
             // GroupTb
             // 
-            GroupTb.Location = new Point(1211, 324);
+            GroupTb.Location = new Point(781, 385);
             GroupTb.Name = "GroupTb";
             GroupTb.Size = new Size(242, 23);
             GroupTb.TabIndex = 12;
@@ -195,7 +196,7 @@
             // GenerateReportBtn
             // 
             GenerateReportBtn.BackColor = Color.GreenYellow;
-            GenerateReportBtn.Location = new Point(1226, 862);
+            GenerateReportBtn.Location = new Point(781, 557);
             GenerateReportBtn.Margin = new Padding(6);
             GenerateReportBtn.Name = "GenerateReportBtn";
             GenerateReportBtn.Size = new Size(90, 47);
@@ -209,7 +210,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
-            ClientSize = new Size(1505, 1061);
+            ClientSize = new Size(1078, 801);
             Controls.Add(GenerateReportBtn);
             Controls.Add(label3);
             Controls.Add(GroupTb);
