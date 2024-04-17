@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -58,10 +59,9 @@ namespace FinancialManagementSystem
             {
                 string filePath = saveFileDialog1.FileName;
                 DataTable ExportTable = new DataTable();
-                ExportTable = (DataTable)TransactionsGv.DataSource;
+                ExportTable = ((DataTable)TransactionsGv.DataSource).Copy();
                 CSVExporter exporter = new CSVExporter(ExportTable, filePath);
                 exporter.exportCSV();
-
             }
 
         }
@@ -146,9 +146,5 @@ namespace FinancialManagementSystem
             }
         }
 
-        private void GenerateBtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
