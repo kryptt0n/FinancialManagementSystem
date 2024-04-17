@@ -49,20 +49,20 @@
             // TransactionsGv
             // 
             TransactionsGv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            TransactionsGv.Location = new Point(71, 196);
-            TransactionsGv.Margin = new Padding(6);
+            TransactionsGv.Location = new Point(42, 196);
+            TransactionsGv.Margin = new Padding(11, 13, 11, 13);
             TransactionsGv.Name = "TransactionsGv";
             TransactionsGv.RowHeadersWidth = 82;
-            TransactionsGv.Size = new Size(1107, 954);
+            TransactionsGv.Size = new Size(858, 730);
             TransactionsGv.TabIndex = 0;
             // 
             // ImportBtn
             // 
             ImportBtn.BackColor = Color.GreenYellow;
-            ImportBtn.Location = new Point(1226, 747);
-            ImportBtn.Margin = new Padding(6);
+            ImportBtn.Location = new Point(939, 397);
+            ImportBtn.Margin = new Padding(11, 13, 11, 13);
             ImportBtn.Name = "ImportBtn";
-            ImportBtn.Size = new Size(90, 36);
+            ImportBtn.Size = new Size(167, 77);
             ImportBtn.TabIndex = 1;
             ImportBtn.Text = "Import";
             ImportBtn.UseVisualStyleBackColor = false;
@@ -71,10 +71,10 @@
             // GenerateBtn
             // 
             GenerateBtn.BackColor = Color.GreenYellow;
-            GenerateBtn.Location = new Point(1226, 795);
-            GenerateBtn.Margin = new Padding(6);
+            GenerateBtn.Location = new Point(939, 499);
+            GenerateBtn.Margin = new Padding(11, 13, 11, 13);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new Size(90, 33);
+            GenerateBtn.Size = new Size(167, 70);
             GenerateBtn.TabIndex = 2;
             GenerateBtn.Text = "Export";
             GenerateBtn.UseVisualStyleBackColor = false;
@@ -83,10 +83,10 @@
             // BackBtn
             // 
             BackBtn.BackColor = Color.GreenYellow;
-            BackBtn.Location = new Point(1226, 1062);
-            BackBtn.Margin = new Padding(6);
+            BackBtn.Location = new Point(939, 843);
+            BackBtn.Margin = new Padding(11, 13, 11, 13);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(167, 86);
+            BackBtn.Size = new Size(186, 83);
             BackBtn.TabIndex = 3;
             BackBtn.Text = "Back";
             BackBtn.UseVisualStyleBackColor = false;
@@ -95,10 +95,10 @@
             // CopyTranBtn
             // 
             CopyTranBtn.BackColor = Color.GreenYellow;
-            CopyTranBtn.Location = new Point(1226, 939);
-            CopyTranBtn.Margin = new Padding(6);
+            CopyTranBtn.Location = new Point(939, 710);
+            CopyTranBtn.Margin = new Padding(11, 13, 11, 13);
             CopyTranBtn.Name = "CopyTranBtn";
-            CopyTranBtn.Size = new Size(90, 50);
+            CopyTranBtn.Size = new Size(167, 107);
             CopyTranBtn.TabIndex = 4;
             CopyTranBtn.Text = "Copy Transaction";
             CopyTranBtn.UseVisualStyleBackColor = false;
@@ -107,9 +107,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(71, 138);
+            label1.Location = new Point(42, 130);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(74, 32);
             label1.TabIndex = 5;
             label1.Text = "From:";
             // 
@@ -118,10 +119,11 @@
             FromDtp.Checked = false;
             FromDtp.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             FromDtp.Format = DateTimePickerFormat.Custom;
-            FromDtp.Location = new Point(161, 138);
+            FromDtp.Location = new Point(128, 130);
+            FromDtp.Margin = new Padding(6, 6, 6, 6);
             FromDtp.Name = "FromDtp";
             FromDtp.ShowCheckBox = true;
-            FromDtp.Size = new Size(292, 23);
+            FromDtp.Size = new Size(337, 39);
             FromDtp.TabIndex = 6;
             FromDtp.ValueChanged += FromDtp_ValueChanged;
             // 
@@ -130,19 +132,21 @@
             ToDtp.Checked = false;
             ToDtp.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             ToDtp.Format = DateTimePickerFormat.Custom;
-            ToDtp.Location = new Point(550, 138);
+            ToDtp.Location = new Point(571, 130);
+            ToDtp.Margin = new Padding(6, 6, 6, 6);
             ToDtp.Name = "ToDtp";
             ToDtp.ShowCheckBox = true;
-            ToDtp.Size = new Size(292, 23);
+            ToDtp.Size = new Size(329, 39);
             ToDtp.TabIndex = 8;
             ToDtp.ValueChanged += ToDtp_ValueChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(482, 143);
+            label2.Location = new Point(499, 141);
+            label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
-            label2.Size = new Size(22, 15);
+            label2.Size = new Size(44, 32);
             label2.TabIndex = 7;
             label2.Text = "To:";
             // 
@@ -150,35 +154,39 @@
             // 
             TypeCb.FormattingEnabled = true;
             TypeCb.Items.AddRange(new object[] { "None", "Income", "Expense" });
-            TypeCb.Location = new Point(1211, 198);
+            TypeCb.Location = new Point(939, 196);
+            TypeCb.Margin = new Padding(6, 6, 6, 6);
             TypeCb.Name = "TypeCb";
-            TypeCb.Size = new Size(242, 23);
+            TypeCb.Size = new Size(242, 40);
             TypeCb.TabIndex = 9;
             TypeCb.SelectedIndexChanged += TypeCb_SelectedIndexChanged;
             // 
             // TypeLb
             // 
             TypeLb.AutoSize = true;
-            TypeLb.Location = new Point(1211, 147);
+            TypeLb.Location = new Point(939, 134);
+            TypeLb.Margin = new Padding(6, 0, 6, 0);
             TypeLb.Name = "TypeLb";
-            TypeLb.Size = new Size(31, 15);
+            TypeLb.Size = new Size(65, 32);
             TypeLb.TabIndex = 10;
             TypeLb.Text = "Type";
             // 
             // GroupLb
             // 
             GroupLb.AutoSize = true;
-            GroupLb.Location = new Point(1211, 266);
+            GroupLb.Location = new Point(939, 259);
+            GroupLb.Margin = new Padding(6, 0, 6, 0);
             GroupLb.Name = "GroupLb";
-            GroupLb.Size = new Size(40, 15);
+            GroupLb.Size = new Size(80, 32);
             GroupLb.TabIndex = 11;
             GroupLb.Text = "Group";
             // 
             // GroupTb
             // 
-            GroupTb.Location = new Point(1211, 324);
+            GroupTb.Location = new Point(939, 321);
+            GroupTb.Margin = new Padding(6, 6, 6, 6);
             GroupTb.Name = "GroupTb";
-            GroupTb.Size = new Size(242, 23);
+            GroupTb.Size = new Size(242, 39);
             GroupTb.TabIndex = 12;
             GroupTb.TextChanged += GroupTb_TextChanged;
             // 
@@ -186,19 +194,20 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
-            label3.Location = new Point(71, 36);
+            label3.Location = new Point(34, 43);
+            label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
-            label3.Size = new Size(93, 32);
+            label3.Size = new Size(190, 65);
             label3.TabIndex = 13;
             label3.Text = "Report";
             // 
             // GenerateReportBtn
             // 
             GenerateReportBtn.BackColor = Color.GreenYellow;
-            GenerateReportBtn.Location = new Point(1226, 862);
-            GenerateReportBtn.Margin = new Padding(6);
+            GenerateReportBtn.Location = new Point(939, 595);
+            GenerateReportBtn.Margin = new Padding(11, 13, 11, 13);
             GenerateReportBtn.Name = "GenerateReportBtn";
-            GenerateReportBtn.Size = new Size(90, 47);
+            GenerateReportBtn.Size = new Size(167, 100);
             GenerateReportBtn.TabIndex = 14;
             GenerateReportBtn.Text = "Generate Report";
             GenerateReportBtn.UseVisualStyleBackColor = false;
@@ -206,10 +215,10 @@
             // 
             // UserReportPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
-            ClientSize = new Size(1505, 1061);
+            ClientSize = new Size(1246, 951);
             Controls.Add(GenerateReportBtn);
             Controls.Add(label3);
             Controls.Add(GroupTb);
@@ -225,7 +234,7 @@
             Controls.Add(GenerateBtn);
             Controls.Add(ImportBtn);
             Controls.Add(TransactionsGv);
-            Margin = new Padding(6);
+            Margin = new Padding(11, 13, 11, 13);
             Name = "UserReportPage";
             Text = "UserReport";
             ((System.ComponentModel.ISupportInitialize)TransactionsGv).EndInit();

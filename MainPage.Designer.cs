@@ -43,26 +43,28 @@
             // 
             // ViewReportBtn
             // 
+            ViewReportBtn.BackColor = Color.GreenYellow;
             ViewReportBtn.Font = new Font("Segoe UI", 10F);
             ViewReportBtn.Location = new Point(563, 585);
             ViewReportBtn.Margin = new Padding(6);
             ViewReportBtn.Name = "ViewReportBtn";
-            ViewReportBtn.Size = new Size(175, 81);
+            ViewReportBtn.Size = new Size(175, 66);
             ViewReportBtn.TabIndex = 1;
             ViewReportBtn.Text = "View Report";
-            ViewReportBtn.UseVisualStyleBackColor = true;
+            ViewReportBtn.UseVisualStyleBackColor = false;
             ViewReportBtn.Click += ViewReportBtn_Click;
             // 
             // LogOutBtn
             // 
+            LogOutBtn.BackColor = Color.GreenYellow;
             LogOutBtn.Font = new Font("Segoe UI", 10F);
             LogOutBtn.Location = new Point(563, 47);
             LogOutBtn.Margin = new Padding(6);
             LogOutBtn.Name = "LogOutBtn";
-            LogOutBtn.Size = new Size(175, 77);
+            LogOutBtn.Size = new Size(175, 66);
             LogOutBtn.TabIndex = 2;
             LogOutBtn.Text = "Log Out";
-            LogOutBtn.UseVisualStyleBackColor = true;
+            LogOutBtn.UseVisualStyleBackColor = false;
             LogOutBtn.Click += LogOutBtn_Click;
             // 
             // UserNameTagLb
@@ -72,9 +74,9 @@
             UserNameTagLb.Location = new Point(110, 62);
             UserNameTagLb.Margin = new Padding(6, 0, 6, 0);
             UserNameTagLb.Name = "UserNameTagLb";
-            UserNameTagLb.Size = new Size(185, 45);
+            UserNameTagLb.Size = new Size(160, 45);
             UserNameTagLb.TabIndex = 3;
-            UserNameTagLb.Text = "User Name:";
+            UserNameTagLb.Text = "Welcome,";
             // 
             // UserNameLb
             // 
@@ -155,13 +157,14 @@
             // 
             // AddTransactionBtn
             // 
+            AddTransactionBtn.BackColor = Color.GreenYellow;
             AddTransactionBtn.Font = new Font("Segoe UI", 10F);
             AddTransactionBtn.Location = new Point(563, 496);
             AddTransactionBtn.Name = "AddTransactionBtn";
             AddTransactionBtn.Size = new Size(175, 66);
             AddTransactionBtn.TabIndex = 11;
             AddTransactionBtn.Text = "+";
-            AddTransactionBtn.UseVisualStyleBackColor = true;
+            AddTransactionBtn.UseVisualStyleBackColor = false;
             AddTransactionBtn.Click += AddTransactionBtn_Click;
             // 
             // MainPage

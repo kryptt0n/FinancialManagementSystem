@@ -4,7 +4,7 @@ namespace FinancialManagementSystem
 {
     internal static class Program
     {
-        public static Database database = Database.GetInstance("3.87.197.200", "3306", "vitaly", "vitalysukhinin", "bank_app");
+        public static Database database = Database.GetInstance("3.86.116.245", "3306", "vitaly", "vitalysukhinin", "bank_app");
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
