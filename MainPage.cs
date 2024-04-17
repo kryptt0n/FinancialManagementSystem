@@ -110,7 +110,7 @@ namespace FinancialManagementSystem
 
         private void ViewReportBtn_Click(object sender, EventArgs e)
         {
-            UserReport userReport = new UserReport();
+            UserReportPage userReport = new UserReportPage();
             userReport.Show();
             this.Hide();
         }

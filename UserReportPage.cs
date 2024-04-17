@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace FinancialManagementSystem
 {
-    public partial class UserReport : Form
+    public partial class UserReportPage : Form
     {
 
         MySqlConnection connection;
         User user = CurrentUser.User;
 
-        public UserReport()
+        public UserReportPage()
         {
             InitializeComponent();
             connection = Program.database.GetConnection();
