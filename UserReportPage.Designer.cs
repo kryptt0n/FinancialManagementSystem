@@ -42,6 +42,7 @@
             GroupLb = new Label();
             GroupTb = new TextBox();
             label3 = new Label();
+            GenerateReportBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)TransactionsGv).BeginInit();
             SuspendLayout();
             // 
@@ -70,12 +71,12 @@
             // GenerateBtn
             // 
             GenerateBtn.BackColor = Color.GreenYellow;
-            GenerateBtn.Location = new Point(1226, 837);
+            GenerateBtn.Location = new Point(1226, 795);
             GenerateBtn.Margin = new Padding(6);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new Size(90, 42);
+            GenerateBtn.Size = new Size(90, 33);
             GenerateBtn.TabIndex = 2;
-            GenerateBtn.Text = "Generate";
+            GenerateBtn.Text = "Export";
             GenerateBtn.UseVisualStyleBackColor = false;
             GenerateBtn.Click += GenerateBtn_Click;
             // 
@@ -108,7 +109,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(71, 138);
             label1.Name = "label1";
-            label1.Size = new Size(74, 32);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 5;
             label1.Text = "From:";
             // 
@@ -120,7 +121,7 @@
             FromDtp.Location = new Point(161, 138);
             FromDtp.Name = "FromDtp";
             FromDtp.ShowCheckBox = true;
-            FromDtp.Size = new Size(292, 39);
+            FromDtp.Size = new Size(292, 23);
             FromDtp.TabIndex = 6;
             FromDtp.ValueChanged += FromDtp_ValueChanged;
             // 
@@ -132,7 +133,7 @@
             ToDtp.Location = new Point(550, 138);
             ToDtp.Name = "ToDtp";
             ToDtp.ShowCheckBox = true;
-            ToDtp.Size = new Size(292, 39);
+            ToDtp.Size = new Size(292, 23);
             ToDtp.TabIndex = 8;
             ToDtp.ValueChanged += ToDtp_ValueChanged;
             // 
@@ -141,7 +142,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(482, 143);
             label2.Name = "label2";
-            label2.Size = new Size(44, 32);
+            label2.Size = new Size(22, 15);
             label2.TabIndex = 7;
             label2.Text = "To:";
             // 
@@ -151,7 +152,7 @@
             TypeCb.Items.AddRange(new object[] { "None", "Income", "Expense" });
             TypeCb.Location = new Point(1211, 198);
             TypeCb.Name = "TypeCb";
-            TypeCb.Size = new Size(242, 40);
+            TypeCb.Size = new Size(242, 23);
             TypeCb.TabIndex = 9;
             TypeCb.SelectedIndexChanged += TypeCb_SelectedIndexChanged;
             // 
@@ -160,7 +161,7 @@
             TypeLb.AutoSize = true;
             TypeLb.Location = new Point(1211, 147);
             TypeLb.Name = "TypeLb";
-            TypeLb.Size = new Size(65, 32);
+            TypeLb.Size = new Size(31, 15);
             TypeLb.TabIndex = 10;
             TypeLb.Text = "Type";
             // 
@@ -169,7 +170,7 @@
             GroupLb.AutoSize = true;
             GroupLb.Location = new Point(1211, 266);
             GroupLb.Name = "GroupLb";
-            GroupLb.Size = new Size(80, 32);
+            GroupLb.Size = new Size(40, 15);
             GroupLb.TabIndex = 11;
             GroupLb.Text = "Group";
             // 
@@ -177,7 +178,7 @@
             // 
             GroupTb.Location = new Point(1211, 324);
             GroupTb.Name = "GroupTb";
-            GroupTb.Size = new Size(242, 39);
+            GroupTb.Size = new Size(242, 23);
             GroupTb.TabIndex = 12;
             GroupTb.TextChanged += GroupTb_TextChanged;
             // 
@@ -187,16 +188,28 @@
             label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
             label3.Location = new Point(71, 36);
             label3.Name = "label3";
-            label3.Size = new Size(190, 65);
+            label3.Size = new Size(93, 32);
             label3.TabIndex = 13;
             label3.Text = "Report";
             // 
-            // UserReport
+            // GenerateReportBtn
+            // 
+            GenerateReportBtn.BackColor = Color.GreenYellow;
+            GenerateReportBtn.Location = new Point(1226, 862);
+            GenerateReportBtn.Margin = new Padding(6);
+            GenerateReportBtn.Name = "GenerateReportBtn";
+            GenerateReportBtn.Size = new Size(90, 47);
+            GenerateReportBtn.TabIndex = 14;
+            GenerateReportBtn.Text = "Generate Report";
+            GenerateReportBtn.UseVisualStyleBackColor = false;
+            // 
+            // UserReportPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
-            ClientSize = new Size(1505, 1220);
+            ClientSize = new Size(1505, 1061);
+            Controls.Add(GenerateReportBtn);
             Controls.Add(label3);
             Controls.Add(GroupTb);
             Controls.Add(GroupLb);
@@ -212,7 +225,7 @@
             Controls.Add(ImportBtn);
             Controls.Add(TransactionsGv);
             Margin = new Padding(6);
-            Name = "UserReport";
+            Name = "UserReportPage";
             Text = "UserReport";
             ((System.ComponentModel.ISupportInitialize)TransactionsGv).EndInit();
             ResumeLayout(false);
@@ -235,5 +248,6 @@
         private Label GroupLb;
         private TextBox GroupTb;
         private Label label3;
+        private Button GenerateReportBtn;
     }
 }
