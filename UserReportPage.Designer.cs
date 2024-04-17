@@ -60,10 +60,10 @@
             // ImportBtn
             // 
             ImportBtn.BackColor = Color.GreenYellow;
-            ImportBtn.Location = new Point(939, 397);
+            ImportBtn.Location = new Point(939, 391);
             ImportBtn.Margin = new Padding(11, 13, 11, 13);
             ImportBtn.Name = "ImportBtn";
-            ImportBtn.Size = new Size(167, 77);
+            ImportBtn.Size = new Size(167, 87);
             ImportBtn.TabIndex = 1;
             ImportBtn.Text = "Import";
             ImportBtn.UseVisualStyleBackColor = false;
@@ -72,10 +72,10 @@
             // GenerateBtn
             // 
             GenerateBtn.BackColor = Color.GreenYellow;
-            GenerateBtn.Location = new Point(939, 499);
+            GenerateBtn.Location = new Point(939, 504);
             GenerateBtn.Margin = new Padding(11, 13, 11, 13);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new Size(167, 70);
+            GenerateBtn.Size = new Size(167, 87);
             GenerateBtn.TabIndex = 2;
             GenerateBtn.Text = "Export";
             GenerateBtn.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@
             BackBtn.Location = new Point(939, 843);
             BackBtn.Margin = new Padding(11, 13, 11, 13);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(186, 83);
+            BackBtn.Size = new Size(167, 87);
             BackBtn.TabIndex = 3;
             BackBtn.Text = "Back";
             BackBtn.UseVisualStyleBackColor = false;
@@ -96,10 +96,10 @@
             // CopyTranBtn
             // 
             CopyTranBtn.BackColor = Color.GreenYellow;
-            CopyTranBtn.Location = new Point(939, 710);
+            CopyTranBtn.Location = new Point(939, 730);
             CopyTranBtn.Margin = new Padding(11, 13, 11, 13);
             CopyTranBtn.Name = "CopyTranBtn";
-            CopyTranBtn.Size = new Size(167, 107);
+            CopyTranBtn.Size = new Size(167, 87);
             CopyTranBtn.TabIndex = 4;
             CopyTranBtn.Text = "Copy Transaction";
             CopyTranBtn.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             FromDtp.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             FromDtp.Format = DateTimePickerFormat.Custom;
             FromDtp.Location = new Point(128, 130);
-            FromDtp.Margin = new Padding(6, 6, 6, 6);
+            FromDtp.Margin = new Padding(6);
             FromDtp.Name = "FromDtp";
             FromDtp.ShowCheckBox = true;
             FromDtp.Size = new Size(337, 39);
@@ -134,7 +134,7 @@
             ToDtp.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             ToDtp.Format = DateTimePickerFormat.Custom;
             ToDtp.Location = new Point(571, 130);
-            ToDtp.Margin = new Padding(6, 6, 6, 6);
+            ToDtp.Margin = new Padding(6);
             ToDtp.Name = "ToDtp";
             ToDtp.ShowCheckBox = true;
             ToDtp.Size = new Size(329, 39);
@@ -156,7 +156,7 @@
             TypeCb.FormattingEnabled = true;
             TypeCb.Items.AddRange(new object[] { "None", "Income", "Expense" });
             TypeCb.Location = new Point(939, 196);
-            TypeCb.Margin = new Padding(6, 6, 6, 6);
+            TypeCb.Margin = new Padding(6);
             TypeCb.Name = "TypeCb";
             TypeCb.Size = new Size(242, 40);
             TypeCb.TabIndex = 9;
@@ -185,7 +185,7 @@
             // GroupTb
             // 
             GroupTb.Location = new Point(939, 321);
-            GroupTb.Margin = new Padding(6, 6, 6, 6);
+            GroupTb.Margin = new Padding(6);
             GroupTb.Name = "GroupTb";
             GroupTb.Size = new Size(242, 39);
             GroupTb.TabIndex = 12;
@@ -205,10 +205,10 @@
             // GenerateReportBtn
             // 
             GenerateReportBtn.BackColor = Color.GreenYellow;
-            GenerateReportBtn.Location = new Point(939, 595);
+            GenerateReportBtn.Location = new Point(939, 617);
             GenerateReportBtn.Margin = new Padding(11, 13, 11, 13);
             GenerateReportBtn.Name = "GenerateReportBtn";
-            GenerateReportBtn.Size = new Size(167, 100);
+            GenerateReportBtn.Size = new Size(167, 87);
             GenerateReportBtn.TabIndex = 14;
             GenerateReportBtn.Text = "Generate Report";
             GenerateReportBtn.UseVisualStyleBackColor = false;
@@ -237,7 +237,7 @@
             Controls.Add(TransactionsGv);
             Margin = new Padding(11, 13, 11, 13);
             Name = "UserReportPage";
-            Text = "UserReport";
+            Text = "Report";
             ((System.ComponentModel.ISupportInitialize)TransactionsGv).EndInit();
             ResumeLayout(false);
             PerformLayout();

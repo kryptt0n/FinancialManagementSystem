@@ -42,10 +42,10 @@
             // 
             // SaveBtn
             // 
-            SaveBtn.BackColor = Color.YellowGreen;
-            SaveBtn.Location = new Point(111, 368);
+            SaveBtn.BackColor = Color.GreenYellow;
+            SaveBtn.Location = new Point(111, 356);
             SaveBtn.Name = "SaveBtn";
-            SaveBtn.Size = new Size(150, 46);
+            SaveBtn.Size = new Size(150, 60);
             SaveBtn.TabIndex = 0;
             SaveBtn.Text = "Save";
             SaveBtn.UseVisualStyleBackColor = false;
@@ -53,10 +53,10 @@
             // 
             // CancelBtn
             // 
-            CancelBtn.BackColor = Color.YellowGreen;
-            CancelBtn.Location = new Point(487, 368);
+            CancelBtn.BackColor = Color.GreenYellow;
+            CancelBtn.Location = new Point(487, 356);
             CancelBtn.Name = "CancelBtn";
-            CancelBtn.Size = new Size(150, 46);
+            CancelBtn.Size = new Size(150, 60);
             CancelBtn.TabIndex = 1;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = false;
@@ -130,7 +130,7 @@
             TypeCb.Size = new Size(400, 40);
             TypeCb.TabIndex = 11;
             // 
-            // TransactionDetail
+            // TransactionDetailPage
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -146,7 +146,7 @@
             Controls.Add(AmountLb);
             Controls.Add(CancelBtn);
             Controls.Add(SaveBtn);
-            Name = "TransactionDetail";
+            Name = "TransactionDetailPage";
             Text = "TransactionDetail";
             ResumeLayout(false);
             PerformLayout();
