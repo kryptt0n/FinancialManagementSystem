@@ -33,22 +33,11 @@
             txtName = new TextBox();
             saveBtn = new Button();
             cancelBtn = new Button();
-            menuStrip1 = new MenuStrip();
-            fileToolStripMenuItem = new ToolStripMenuItem();
-            loginToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            eventsToolStripMenuItem = new ToolStripMenuItem();
-            viewEventsToolStripMenuItem = new ToolStripMenuItem();
-            addEventToolStripMenuItem = new ToolStripMenuItem();
-            usersToolStripMenuItem = new ToolStripMenuItem();
-            allUsersToolStripMenuItem = new ToolStripMenuItem();
-            addUserToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
             label4 = new Label();
             txtEmail = new TextBox();
             label5 = new Label();
             txtPassword = new TextBox();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -61,7 +50,6 @@
             label1.Size = new Size(88, 34);
             label1.TabIndex = 0;
             label1.Text = "Name";
-            label1.Click += label1_Click;
             // 
             // txtName
             // 
@@ -72,7 +60,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(369, 41);
             txtName.TabIndex = 1;
-            txtName.TextChanged += txtName_TextChanged;
             // 
             // saveBtn
             // 
@@ -102,82 +89,6 @@
             cancelBtn.UseVisualStyleBackColor = false;
             cancelBtn.Click += cancelBtn_Click;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.Transparent;
-            menuStrip1.Font = new Font("Tahoma", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eventsToolStripMenuItem, usersToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(6, 2, 0, 2);
-            menuStrip1.Size = new Size(728, 42);
-            menuStrip1.TabIndex = 9;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, exitToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(77, 38);
-            fileToolStripMenuItem.Text = "File";
-            // 
-            // loginToolStripMenuItem
-            // 
-            loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(359, 44);
-            loginToolStripMenuItem.Text = "Log off";
-            loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(359, 44);
-            exitToolStripMenuItem.Text = "Exit";
-            // 
-            // eventsToolStripMenuItem
-            // 
-            eventsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewEventsToolStripMenuItem, addEventToolStripMenuItem });
-            eventsToolStripMenuItem.Name = "eventsToolStripMenuItem";
-            eventsToolStripMenuItem.Size = new Size(118, 38);
-            eventsToolStripMenuItem.Text = "Events";
-            // 
-            // viewEventsToolStripMenuItem
-            // 
-            viewEventsToolStripMenuItem.Name = "viewEventsToolStripMenuItem";
-            viewEventsToolStripMenuItem.Size = new Size(275, 44);
-            viewEventsToolStripMenuItem.Text = "All Events";
-            viewEventsToolStripMenuItem.Click += viewEventsToolStripMenuItem_Click;
-            // 
-            // addEventToolStripMenuItem
-            // 
-            addEventToolStripMenuItem.Name = "addEventToolStripMenuItem";
-            addEventToolStripMenuItem.Size = new Size(275, 44);
-            addEventToolStripMenuItem.Text = "Add Event";
-            addEventToolStripMenuItem.Click += addEventToolStripMenuItem_Click;
-            // 
-            // usersToolStripMenuItem
-            // 
-            usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { allUsersToolStripMenuItem, addUserToolStripMenuItem });
-            usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(104, 38);
-            usersToolStripMenuItem.Text = "Users";
-            // 
-            // allUsersToolStripMenuItem
-            // 
-            allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
-            allUsersToolStripMenuItem.Size = new Size(261, 44);
-            allUsersToolStripMenuItem.Text = "All Users";
-            allUsersToolStripMenuItem.Click += allUsersToolStripMenuItem_Click;
-            // 
-            // addUserToolStripMenuItem
-            // 
-            addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            addUserToolStripMenuItem.Size = new Size(261, 44);
-            addUserToolStripMenuItem.Text = "Add User";
-            addUserToolStripMenuItem.Click += addUserToolStripMenuItem_Click;
-            // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
@@ -194,7 +105,6 @@
             label4.Size = new Size(82, 34);
             label4.TabIndex = 10;
             label4.Text = "Email";
-            label4.Click += label4_Click;
             // 
             // txtEmail
             // 
@@ -216,7 +126,6 @@
             label5.Size = new Size(132, 34);
             label5.TabIndex = 15;
             label5.Text = "Password";
-            label5.Click += label5_Click;
             // 
             // txtPassword
             // 
@@ -238,7 +147,6 @@
             Controls.Add(label5);
             Controls.Add(txtEmail);
             Controls.Add(label4);
-            Controls.Add(menuStrip1);
             Controls.Add(cancelBtn);
             Controls.Add(saveBtn);
             Controls.Add(txtName);
@@ -246,10 +154,8 @@
             Font = new Font("Tahoma", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 2, 4, 2);
             Name = "SignUpPage";
-            Text = "User Detail";
+            Text = "Sign up";
             Load += UserDetail_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,16 +166,6 @@
         private TextBox txtName;
         private Button saveBtn;
         private Button cancelBtn;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem loginToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem eventsToolStripMenuItem;
-        private ToolStripMenuItem viewEventsToolStripMenuItem;
-        private ToolStripMenuItem addEventToolStripMenuItem;
-        private ToolStripMenuItem usersToolStripMenuItem;
-        private ToolStripMenuItem allUsersToolStripMenuItem;
-        private ToolStripMenuItem addUserToolStripMenuItem;
         private ContextMenuStrip contextMenuStrip1;
         private Label label4;
         private TextBox txtEmail;

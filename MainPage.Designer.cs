@@ -45,7 +45,7 @@
             // 
             ViewReportBtn.BackColor = Color.GreenYellow;
             ViewReportBtn.Font = new Font("Segoe UI", 10F);
-            ViewReportBtn.Location = new Point(563, 585);
+            ViewReportBtn.Location = new Point(563, 484);
             ViewReportBtn.Margin = new Padding(6);
             ViewReportBtn.Name = "ViewReportBtn";
             ViewReportBtn.Size = new Size(175, 66);
@@ -71,7 +71,7 @@
             // 
             UserNameTagLb.AutoSize = true;
             UserNameTagLb.Font = new Font("Segoe UI", 12F);
-            UserNameTagLb.Location = new Point(110, 62);
+            UserNameTagLb.Location = new Point(43, 56);
             UserNameTagLb.Margin = new Padding(6, 0, 6, 0);
             UserNameTagLb.Name = "UserNameTagLb";
             UserNameTagLb.Size = new Size(160, 45);
@@ -82,7 +82,7 @@
             // 
             UserNameLb.AutoSize = true;
             UserNameLb.Font = new Font("Segoe UI", 12F);
-            UserNameLb.Location = new Point(290, 62);
+            UserNameLb.Location = new Point(197, 56);
             UserNameLb.Margin = new Padding(6, 0, 6, 0);
             UserNameLb.Name = "UserNameLb";
             UserNameLb.Size = new Size(169, 45);
@@ -93,7 +93,7 @@
             // 
             BlanaceLb.AutoSize = true;
             BlanaceLb.Font = new Font("Segoe UI", 15F);
-            BlanaceLb.Location = new Point(126, 478);
+            BlanaceLb.Location = new Point(40, 496);
             BlanaceLb.Margin = new Padding(6, 0, 6, 0);
             BlanaceLb.Name = "BlanaceLb";
             BlanaceLb.Size = new Size(167, 54);
@@ -103,11 +103,11 @@
             // BalanceValueLb
             // 
             BalanceValueLb.AutoSize = true;
-            BalanceValueLb.Font = new Font("Segoe UI", 15F);
-            BalanceValueLb.Location = new Point(290, 478);
+            BalanceValueLb.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BalanceValueLb.Location = new Point(220, 496);
             BalanceValueLb.Margin = new Padding(6, 0, 6, 0);
             BalanceValueLb.Name = "BalanceValueLb";
-            BalanceValueLb.Size = new Size(265, 54);
+            BalanceValueLb.Size = new Size(294, 54);
             BalanceValueLb.TabIndex = 6;
             BalanceValueLb.Text = "Balance Value";
             // 
@@ -115,7 +115,7 @@
             // 
             IncomeTagLb.AutoSize = true;
             IncomeTagLb.Font = new Font("Segoe UI", 12F);
-            IncomeTagLb.Location = new Point(110, 174);
+            IncomeTagLb.Location = new Point(40, 192);
             IncomeTagLb.Margin = new Padding(6, 0, 6, 0);
             IncomeTagLb.Name = "IncomeTagLb";
             IncomeTagLb.Size = new Size(133, 45);
@@ -126,7 +126,7 @@
             // 
             ExpensesTagLb.AutoSize = true;
             ExpensesTagLb.Font = new Font("Segoe UI", 12F);
-            ExpensesTagLb.Location = new Point(110, 250);
+            ExpensesTagLb.Location = new Point(40, 268);
             ExpensesTagLb.Margin = new Padding(6, 0, 6, 0);
             ExpensesTagLb.Name = "ExpensesTagLb";
             ExpensesTagLb.Size = new Size(150, 45);
@@ -137,7 +137,8 @@
             // 
             ExpensesLb.AutoSize = true;
             ExpensesLb.Font = new Font("Segoe UI", 12F);
-            ExpensesLb.Location = new Point(336, 250);
+            ExpensesLb.ForeColor = Color.Red;
+            ExpensesLb.Location = new Point(266, 268);
             ExpensesLb.Margin = new Padding(6, 0, 6, 0);
             ExpensesLb.Name = "ExpensesLb";
             ExpensesLb.Size = new Size(150, 45);
@@ -148,7 +149,8 @@
             // 
             IncomeLb.AutoSize = true;
             IncomeLb.Font = new Font("Segoe UI", 12F);
-            IncomeLb.Location = new Point(336, 174);
+            IncomeLb.ForeColor = Color.ForestGreen;
+            IncomeLb.Location = new Point(266, 192);
             IncomeLb.Margin = new Padding(6, 0, 6, 0);
             IncomeLb.Name = "IncomeLb";
             IncomeLb.Size = new Size(126, 45);
@@ -159,7 +161,7 @@
             // 
             AddTransactionBtn.BackColor = Color.GreenYellow;
             AddTransactionBtn.Font = new Font("Segoe UI", 10F);
-            AddTransactionBtn.Location = new Point(563, 496);
+            AddTransactionBtn.Location = new Point(563, 392);
             AddTransactionBtn.Name = "AddTransactionBtn";
             AddTransactionBtn.Size = new Size(175, 66);
             AddTransactionBtn.TabIndex = 11;
@@ -172,7 +174,7 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Honeydew;
-            ClientSize = new Size(800, 768);
+            ClientSize = new Size(800, 598);
             Controls.Add(AddTransactionBtn);
             Controls.Add(ExpensesLb);
             Controls.Add(IncomeLb);
@@ -186,7 +188,7 @@
             Controls.Add(ViewReportBtn);
             Margin = new Padding(4, 2, 4, 2);
             Name = "MainPage";
-            Text = "Form1";
+            Text = "Main menu";
             Load += MainPage_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -19,43 +19,19 @@ namespace FinancialManagementSystem
     {
         private MySqlConnection connection = Program.database.GetConnection();
 
-
-        // constructor for add new user
         public SignUpPage()
         {
             InitializeComponent();
-            ConfigureVisibleElements();
-
-        }
-
-        // menubar actions
-        private void viewEventsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void addEventToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void allUsersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            
-
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            Hide();
         }
 
-        // save button action
+
         private void saveBtn_Click(object sender, EventArgs e)
         {
             // validate 
@@ -82,49 +58,7 @@ namespace FinancialManagementSystem
                 {
                     MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
                 }
-
-                /*if (actionType == ActionType.Edit)
-                {
-                    try
-                    {
-                        String qStr = $"UPDATE User SET Password = '{password}', Email = '{email}', WHERE UserName = '{userName}'";
-                        MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                        mySqlCommand.ExecuteNonQuery();
-
-                        MessageBox.Show(" User updated!!!", "Edit User", MessageBoxButtons.OK);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
-                    }
-                }*/
-
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void myEventsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void registForEventsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         // hide password
@@ -133,17 +67,6 @@ namespace FinancialManagementSystem
             txtPassword.PasswordChar = '*';
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // method to validate name is not empty and not exceed 30
         private bool NameValidate()
         {
             if (string.IsNullOrEmpty(txtName.Text))
@@ -189,26 +112,6 @@ namespace FinancialManagementSystem
                 }
             }
             return true;
-        }
-
- 
-      
-
-        private void ConfigureVisibleElements()
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginPage loginPage = new LoginPage();
-            loginPage.Show();
-            Hide();
         }
     }
 }
