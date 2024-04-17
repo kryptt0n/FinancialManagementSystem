@@ -110,14 +110,14 @@ namespace FinancialManagementSystem
 
         private void ViewReportBtn_Click(object sender, EventArgs e)
         {
-            UserReport userReport = new UserReport();
+            UserReportPage userReport = new UserReportPage();
             userReport.Show();
             this.Hide();
         }
 
         private void AddTransactionBtn_Click(object sender, EventArgs e)
         {
-            TransactionDetail transactionDetail = new TransactionDetail();
+            TransactionDetailPage transactionDetail = new TransactionDetailPage();
             transactionDetail.Show();
             Hide();
         }

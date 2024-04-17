@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace FinancialManagementSystem
 {
-    public partial class TransactionDetail : Form
+    public partial class TransactionDetailPage : Form
     {
         private User user;
         private MySqlConnection connection;
-        public TransactionDetail()
+        public TransactionDetailPage()
         {
             InitializeComponent();
             user = CurrentUser.User;
             connection = Program.database.GetConnection();
         }
 
-        public TransactionDetail(string type, string group) : this()
+        public TransactionDetailPage(string type, string group) : this()
         {
             TypeCb.Text = type;
             GroupTb.Text = group;
