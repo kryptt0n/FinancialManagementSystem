@@ -48,6 +48,7 @@ namespace FinancialManagementSystem
                 CSVParser parser = new CSVParser(filePath);
                 parser.ConverterToCharacter();
             }
+            LoadAllData();
 
         }
         private void GenerateBtn_Click(object sender, EventArgs e)

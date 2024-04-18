@@ -51,6 +51,14 @@ namespace FinancialManagementSystem
                     {
                         return "EX";
                     }
+                    else if(Double.TryParse(value,out double Amount))
+                    {
+                        if(Amount < 0)
+                        {
+                            Amount = Amount * -1;
+                        }
+                        return Amount.ToString();
+                    }
                     return value;
                     });
                 sb.AppendLine(string.Join(",", fields));
