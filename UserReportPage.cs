@@ -64,7 +64,7 @@ namespace FinancialManagementSystem
                 DataTable ExportTable = new DataTable();
                 ExportTable = ((DataTable)TransactionsGv.DataSource).Copy();
                 CSVExporter exporter = new CSVExporter(ExportTable, filePath);
-                exporter.exportCSV();
+                exporter.ExportCSV();
             }
 
         }
@@ -159,14 +159,14 @@ namespace FinancialManagementSystem
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                /*string filePath = saveFileDialog1.FileName;
+                string filePath = saveFileDialog1.FileName;
                 DataTable exportTable = ((DataTable)TransactionsGv.DataSource).Copy();
                 ReportDocumentDataSource source = new ReportDocumentDataSource(exportTable);
                 source.CreateSource();
                 var document = new ReportDocument(source);
                 document.ExportPDF(filePath);
 
-                System.Diagnostics.Process.Start("explorer.exe", $"/select,\"{filePath}\"");*/
+                System.Diagnostics.Process.Start("explorer.exe", $"/select,\"{filePath}\"");
             }
         }
 
