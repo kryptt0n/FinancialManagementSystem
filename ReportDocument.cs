@@ -13,7 +13,7 @@ using iText.Layout.Font;
 
 namespace FinancialManagementSystem
 {
-    internal class ReportDocument
+    public class ReportDocument
     {
         public ReportDocumentDataSource source { get; }
 

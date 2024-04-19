@@ -65,7 +65,7 @@ namespace FinancialManagementSystem
                 DataTable ExportTable = new DataTable();
                 ExportTable = ((DataTable)TransactionsGv.DataSource).Copy();
                 CSVExporter exporter = new CSVExporter(ExportTable, filePath);
-                exporter.exportCSV();
+                exporter.ExportCSV();
             }
 
         }

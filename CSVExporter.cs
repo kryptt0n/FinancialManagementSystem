@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagementSystem
 {
-    internal class CSVExporter
+    public class CSVExporter
     {
         private string filePath;
         private DataTable table;
@@ -20,7 +20,7 @@ namespace FinancialManagementSystem
             this.table = table;
             user = CurrentUser.User;
         }
-        public void exportCSV()
+        public void ExportCSV()
         {
             table.PrimaryKey = null;
             table.Columns.Remove("UID");
