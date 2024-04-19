@@ -8,23 +8,32 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
 		Debug|ARM64 = Debug|ARM64
 		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
 		Release|ARM64 = Release|ARM64
 		Testing|Any CPU = Testing|Any CPU
+		Testing|ARM32 = Testing|ARM32
 		Testing|ARM64 = Testing|ARM64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|Any CPU.ActiveCfg = Testing|Any CPU
 		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|Any CPU.Build.0 = Testing|Any CPU
+		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|ARM32.Build.0 = Debug|ARM32
 		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{CDF8A104-3850-4532-9476-228C030AB279}.Debug|ARM64.Build.0 = Debug|ARM64
 		{CDF8A104-3850-4532-9476-228C030AB279}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF8A104-3850-4532-9476-228C030AB279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF8A104-3850-4532-9476-228C030AB279}.Release|ARM32.ActiveCfg = Release|ARM32
+		{CDF8A104-3850-4532-9476-228C030AB279}.Release|ARM32.Build.0 = Release|ARM32
 		{CDF8A104-3850-4532-9476-228C030AB279}.Release|ARM64.ActiveCfg = Release|ARM64
 		{CDF8A104-3850-4532-9476-228C030AB279}.Release|ARM64.Build.0 = Release|ARM64
 		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
 		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|Any CPU.Build.0 = Testing|Any CPU
+		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|ARM32.ActiveCfg = Testing|Any CPU
+		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|ARM32.Build.0 = Testing|Any CPU
 		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|ARM64.ActiveCfg = Testing|Any CPU
 		{CDF8A104-3850-4532-9476-228C030AB279}.Testing|ARM64.Build.0 = Testing|Any CPU
 	EndGlobalSection
