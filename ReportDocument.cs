@@ -49,6 +49,7 @@ namespace FinancialManagementSystem
                 .SetFontSize(20)
                 .SetFontColor(iText.Kernel.Colors.ColorConstants.BLUE)
                 .SetBold();
+            var headerStyle = new Style().SetBold();
 
 
             document.Add(new Paragraph("Financial Report").AddStyle(titleStyle));
@@ -58,12 +59,12 @@ namespace FinancialManagementSystem
             float[] pointColumnWidths = { 50F, 150F, 100F, 100F, 100F, 100F };
             Table table = new Table(pointColumnWidths);
 
-            table.AddCell(new Cell().Add(new Paragraph("#")));
-            table.AddCell(new Cell().Add(new Paragraph("Date")));
-            table.AddCell(new Cell().Add(new Paragraph("Type")));
-            table.AddCell(new Cell().Add(new Paragraph("Amount")));
-            table.AddCell(new Cell().Add(new Paragraph("Group")));
-            table.AddCell(new Cell().Add(new Paragraph("Balance")));
+            table.AddCell(new Cell().Add(new Paragraph("#").AddStyle(headerStyle)));
+            table.AddCell(new Cell().Add(new Paragraph("Date").AddStyle(headerStyle)));
+            table.AddCell(new Cell().Add(new Paragraph("Type").AddStyle(headerStyle)));
+            table.AddCell(new Cell().Add(new Paragraph("Amount").AddStyle(headerStyle)));
+            table.AddCell(new Cell().Add(new Paragraph("Group").AddStyle(headerStyle)));
+            table.AddCell(new Cell().Add(new Paragraph("Balance").AddStyle(headerStyle)));
 
 
             for (int i = 0; i < source.arrayList!.Count-1; i++)
