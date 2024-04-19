@@ -6,19 +6,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FinancialManagementSystem
 {
     public partial class SignUpPage : Form
     {
         private MySqlConnection connection = Program.database.GetConnection();
-
         public SignUpPage()
         {
             InitializeComponent();
@@ -42,22 +45,72 @@ namespace FinancialManagementSystem
                 string password = txtPassword.Text;
                 string hashedPassword = PasswordHasher.ComputeSha256Hash(password);
                 string email = txtEmail.Text;
-                try
+
+                if (VerifyUsername(userName) && VerifyEmail(email))
                 {
-                    String qStr = $"INSERT INTO USERS(UNAME, PWHASH, EMAIL) VALUES ('{userName}','{hashedPassword}','{email}')";
-                    MySqlCommand mySqlCommand = new MySqlCommand(qStr, connection);
-                    mySqlCommand.ExecuteNonQuery();
+                    try
+                    {
+                        Random random = new Random();
+                        int code = random.Next(1000, 10000);
 
-                    MessageBox.Show(" New user added successfully!!!", "New User", MessageBoxButtons.OK);
+                        MailAddress to = new MailAddress(email);
+                        MailAddress from = new MailAddress("test@test.test");
+                        MailMessage message = new MailMessage(from, to);
+                        message.Subject = "Verification code Finance System.";
+                        message.Body = $"Here is verification code: <b>{code}</b>";
+                        message.IsBodyHtml = true;
 
-                    LoginPage login = new LoginPage();
-                    login.Show();
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                        smtp.EnableSsl = true;
+                        NetworkCredential netCre = new NetworkCredential("applicationfinance4@gmail.com", "bemm vayb erbm gjmw");
+                        smtp.Credentials = netCre;
 
-                }
-                catch (Exception ex)
+                        try
+                        {
+                            smtp.Send(message);
+                            User createdUser = new User();
+                            createdUser.Username = userName;
+                            createdUser.Email = email;
+                            createdUser.Password = password;
+                            VerificationForm verification = new VerificationForm(code, createdUser);
+                            verification.Show();
+                            Hide();
+                            // Email sent successfully
+                        }
+                        catch (Exception ex)
+                        {
+                            // Handle any exceptions (e.g., unable to connect to the server)
+                            Console.WriteLine(ex);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    }
+                } else
                 {
-                    MessageBox.Show(" Error in Database Operation", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("User with this credentials already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private bool VerifyUsername(string userName)
+        {
+            string qStr = $"SELECT * FROM USERS WHERE UNAME = '{userName}';";
+            MySqlCommand command = new MySqlCommand(qStr, connection);
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                return !reader.HasRows;
+            }
+        }
+
+        private bool VerifyEmail(string email)
+        {
+            string qStr = $"SELECT * FROM USERS WHERE EMAIL = '{email}';";
+            MySqlCommand command = new MySqlCommand(qStr, connection);
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                return !reader.HasRows;
             }
         }
 

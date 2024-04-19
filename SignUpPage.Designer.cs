@@ -66,7 +66,7 @@
             saveBtn.BackColor = Color.GreenYellow;
             saveBtn.FlatStyle = FlatStyle.Flat;
             saveBtn.Font = new Font("Tahoma", 10.5F);
-            saveBtn.Location = new Point(161, 354);
+            saveBtn.Location = new Point(161, 356);
             saveBtn.Margin = new Padding(4, 2, 4, 2);
             saveBtn.Name = "saveBtn";
             saveBtn.Size = new Size(138, 47);
@@ -80,7 +80,7 @@
             cancelBtn.BackColor = Color.GreenYellow;
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Tahoma", 10.5F);
-            cancelBtn.Location = new Point(372, 354);
+            cancelBtn.Location = new Point(372, 356);
             cancelBtn.Margin = new Padding(4, 2, 4, 2);
             cancelBtn.Name = "cancelBtn";
             cancelBtn.Size = new Size(138, 47);
